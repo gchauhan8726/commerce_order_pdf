@@ -34,3 +34,8 @@ INSTALLATION
 MAINTAINERS
 ===========
 Gaurav Kapoor ( https://www.drupal.org/u/gauravkapoor )
+
+
+MODULE DEVELOPER
+================
+Gaurav Chauhan ( https://www.drupal.org/u/gchauhan )
