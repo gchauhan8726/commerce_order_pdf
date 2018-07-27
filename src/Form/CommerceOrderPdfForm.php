@@ -70,7 +70,7 @@ class CommerceOrderPdfForm extends ConfigFormBase {
     parent::submitForm($form, $form_state);
     // Display result.
     $config = $this->config('commerceorderpdf.settings');
-    
+
     $invoice_html = $form_state->getValue('invoice_html')['value'];
     $invoice_css = $form_state->getValue('invoice_css')['value'];
 

@@ -18,8 +18,8 @@ function commerce_order_pdf_help($route_name, RouteMatchInterface $route_match) 
       $output .= '<h3>' . t('About') . '</h3>';
       $output .= '<p>' . t('This module provides the facility to print the invoice in pdf format.') . '</p>';
       $output .= '<h3>' . t('Uses') . '</h3>';
-      $output .= '<p>' . t('To use this module you have to install it. Then go to the /commerce/orders. Here you will find a button to print the invoice.') . '</p>';
-       
+      $output .= '<p>' . t('To use this module install it from drupal.org. Then go to the /commerce/orders. Here you will find a button to print the invoice.') . '</p>';
+
       return $output;
 
     default:

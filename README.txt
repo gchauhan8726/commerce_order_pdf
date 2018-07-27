@@ -8,6 +8,7 @@ invoice of commerce order.
 REQUIREMENTS
 ============
 - commerce_order
+- commerce_price
 
 
 FEATURES

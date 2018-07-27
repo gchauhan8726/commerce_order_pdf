@@ -26,6 +26,8 @@ class CommerceOrderPdfController extends ControllerBase {
     $commerce_order_id = \Drupal::routeMatch()->getParameter('commerce_order_id');
     $order = Order::load($commerce_order_id);
     $items = $order->getItems();
+    $timestamp = $order->getCompletedTime();
+    $time = date('d/m/Y H:i:s', $timestamp);
     $billing_profile = $order->getBillingProfile()->get('address')->getValue()[0];
     $cbp = $billing_profile['given_name'] . " " . $billing_profile['family_name']. ", " . '<br>' . $billing_profile['organization']. ", " . '<br>' . $billing_profile['address_line1']. ", " . $billing_profile['address_line2']. ", "  . '<br>' . $billing_profile['locality']. ", " . $billing_profile['administrative_area']. ", " . $billing_profile['country_code']. "-" . $billing_profile['postal_code'];
 
@@ -39,12 +41,11 @@ class CommerceOrderPdfController extends ControllerBase {
       $qty = $item->get('quantity')->getValue()[0]['value'];
       $row .= '<td>'.$oid.'</td>'.'<td>'.$title .'</td>'. '<td>'.$price .'</td>'. '<td>'.$qty . '</td></tr>';
     }
-    
+
     $config_html = \Drupal::config('commerceorderpdf.settings')->get('invoice_html')['value'];
     $config_css = \Drupal::config('commerceorderpdf.settings')->get('invoice_css')['value'];
-   
-    $invoice = $config_html . $row . $total. '</table>'. '<table><th>Total</th><td>' . $total . '</td></table>' . '<br><div><h3>Receipent</h3>'. $cbp . '</div>' . $config_css;
-    
+
+    $invoice = $config_html . $row . $total. '</table>'. '<table><th>Total</th><td>' . $total . '</td></table>' . '<br><div><h3>Receipent</h3>'. $cbp . '<br>' . $time . '</div>' . $config_css;
 
     $dompdf = new Dompdf();
     $dompdf->loadHtml($invoice);

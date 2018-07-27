@@ -4,4 +4,3 @@ commerceorderpdf.admin:
   parent: commerce.admin_commerce
   route_name: commerce_order_pdf.commerce_order_pdf_form
   weight: 5
-  
