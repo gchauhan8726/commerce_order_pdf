@@ -10,6 +10,7 @@
     "issues": "https://www.drupal.org/project/issues/commerce_order_pdf",
     "source": "http://cgit.drupalcode.org/commerce_order_pdf"
   },
+
   "require": {
       "dompdf/dompdf": "^0.8.2"
   }

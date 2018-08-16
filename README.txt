@@ -8,7 +8,6 @@ invoice of commerce order.
 REQUIREMENTS
 ============
 - commerce_order
-- commerce_price
 
 
 FEATURES
@@ -34,8 +33,3 @@ INSTALLATION
 MAINTAINERS
 ===========
 Gaurav Kapoor ( https://www.drupal.org/u/gauravkapoor )
-
-
-MODULE DEVELOPER
-================
-Gaurav Chauhan ( https://www.drupal.org/u/gchauhan )

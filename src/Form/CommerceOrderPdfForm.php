@@ -3,8 +3,6 @@
 namespace Drupal\commerce_order_pdf\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
-use \Drupal\user\Entity\Role;
-use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -34,7 +32,7 @@ class CommerceOrderPdfForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('commerceorderpdf.settings');
 
-    $form['invoice_html'] = array(
+    $form['invoice_html'] = [
       '#type' => 'text_format',
       '#format' => 'restricted_html',
       '#base_type' => 'textarea',
@@ -42,16 +40,16 @@ class CommerceOrderPdfForm extends ConfigFormBase {
       '#title' => ' HTML Template',
       '#description' => 'The HTML code to be placed within the pdf. HTML can be added through this function or on the pdf invoice.',
       '#default_value' => $config->get('invoice_html.value'),
-    );
+    ];
 
-    $form['invoice_css'] = array(
+    $form['invoice_css'] = [
       '#type' => 'text_format',
       '#format' => 'restricted_html',
       '#rows' => 20,
       '#title' => 'Custom CSS',
       '#description' => 'write custom css for the above html code ',
       '#default_value' => $config->get('invoice_css.value'),
-    );
+    ];
 
     return parent::buildForm($form, $form_state);
   }
